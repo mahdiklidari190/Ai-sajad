@@ -6,72 +6,82 @@
     <title>فروشگاه آنلاین</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         header {
-            background-color: #333;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
             color: #fff;
-            padding: 1rem;
+            padding: 2rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
         }
         .product {
             background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            width: 300px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .product:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
         .product img {
             max-width: 100%;
             height: auto;
+            border-radius: 10px;
         }
         button {
-            background-color: #28a745;
+            background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
             color: #fff;
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.3s;
         }
         button:hover {
-            background-color: #218838;
+            background: linear-gradient(90deg, #feb47b 0%, #ff7e5f 100%);
+            transform: scale(1.05);
         }
         footer {
-            background-color: #333;
+            background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
             color: #fff;
             text-align: center;
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 1.5rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>فروشگاه آنلاین</h1>
+        <p>بهترین محصولات با بهترین قیمت‌ها</p>
     </header>
     <div class="container">
         <div class="product">
-            <img src="https://via.placeholder.com/300" alt="محصول ۱">
+            <img src="https://via.placeholder.com/300x200" alt="محصول ۱">
             <h2>محصول ۱</h2>
             <p>قیمت: ۱۰۰,۰۰۰ تومان</p>
             <button onclick="addToCart('محصول ۱', 100000)">افزودن به سبد</button>
         </div>
         <div class="product">
-            <img src="https://via.placeholder.com/300" alt="محصول ۲">
+            <img src="https://via.placeholder.com/300x200" alt="محصول ۲">
             <h2>محصول ۲</h2>
             <p>قیمت: ۱۵۰,۰۰۰ تومان</p>
             <button onclick="addToCart('محصول ۲', 150000)">افزودن به سبد</button>
@@ -87,7 +97,7 @@
 
         function addToCart(productName, price) {
             cart.push({ name: productName, price: price });
-            alert(f"{productName} به سبد خرید اضافه شد!");
+            alert(`${productName} به سبد خرید اضافه شد!`);
             console.log(cart);
         }
     </script>
